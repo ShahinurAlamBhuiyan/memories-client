@@ -5,7 +5,7 @@ import useStyles from './styles';
 import { useSelector } from 'react-redux';
 
 const Posts = ({setCurrentId}) => {
-    const { posts, isLoading } = useSelector((state) => state.posts)
+    const { posts, isLoading } = useSelector((state) => state.posts);
     const classes = useStyles();
 
     if(!posts.length && !isLoading) return "No Posts";
@@ -24,3 +24,5 @@ const Posts = ({setCurrentId}) => {
 };
 
 export default Posts;
+
+// done

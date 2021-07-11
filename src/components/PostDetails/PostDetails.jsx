@@ -7,6 +7,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { getPost, getPostsBySearch } from '../../actions/posts';
 import useStyles from './styles';
 
+
 const PostDetails = () => {
     const { post, posts, isLoading } = useSelector((state) => state.posts);
     const dispatch = useDispatch();
@@ -19,22 +20,24 @@ const PostDetails = () => {
     }, [id]);
 
     useEffect(() => {
-        if(post){
+        if(post) {
           dispatch(getPostsBySearch({ search: 'none', tags: post?.tags.join(',') }));
         }
-    }, [post])
+    }, [post]);
 
     if(!post) return null;
 
+    
+    const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
+
+    const openPost = (_id) => history.push(`/posts/${_id}`);
+    
     if(isLoading){
         return <Paper elevation={6} className={classes.loadingPaper}>
             <CircularProgress size="7em" />
         </Paper>
     }
 
-    const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
-
-    const openPost = (_id) => history.push(`/posts/${_id}`)
 
     return (
       <Paper style={{padding: '20px', borderRadius: '15px'}} elevation={6}>
@@ -77,3 +80,6 @@ const PostDetails = () => {
 };
 
 export default PostDetails;
+
+
+// done

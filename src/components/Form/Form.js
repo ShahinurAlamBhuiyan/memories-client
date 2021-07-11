@@ -6,44 +6,59 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { createPost, updatePost } from '../../actions/posts';
 import { useHistory } from 'react-router-dom';
+import ChipInput from 'material-ui-chip-input'; // extra
+
+
 
 const Form = ({ currentId, setCurrentId }) => {
-    const [postData, setPostData] = useState({ title: '', message: '', tags: '', selectedFile: '' });
-    const post = useSelector((state) => currentId ? state.posts.posts.find((p) => p._id === currentId) : null);
+    const [postData, setPostData] = useState({ title: '', message: '', tags: [], selectedFile: '' });
+    const post = useSelector((state) => (currentId ? state.posts.posts.find((message) => message._id === currentId) : null));
     const classes = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const user = JSON.parse(localStorage.getItem('profile'));
 
-    useEffect(() => {
-        if (post) setPostData(post);
-    }, [post])
 
     const clear = () => {
         setCurrentId(0);
-        setPostData({ title: '', message: '', tags: '', selectedFile: '' });
+        setPostData({ title: '', message: '', tags: [], selectedFile: '' });
     };
+
+    useEffect(() => {
+        if (!post?.title) clear();
+        if (post) setPostData(post);
+    }, [post]);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (currentId === 0) {
             dispatch(createPost({ ...postData, name: user?.result?.name }, history));
             clear();
-          } else {
+        } else {
             dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
             clear();
-          }
+        }
     };
 
-    if(!user?.result?.name){
-        return(
+    if (!user?.result?.name) {
+        return (
             <Paper className={classes.paper}>
                 <Typography variant="h6" align='center'>
                     Please Sign In to create your own memories and like other's memories.
                 </Typography>
             </Paper>
         )
-    }
+    };
+
+
+    const handleAddChip = (tag) => {
+        setPostData({ ...postData, tags: [...postData.tags, tag] });
+    };
+
+    const handleDeleteChip = (chipToDelete) => {
+        setPostData({ ...postData, tags: postData.tags.filter((tag) => tag !== chipToDelete) });
+    };
 
 
     return (
@@ -65,13 +80,17 @@ const Form = ({ currentId, setCurrentId }) => {
                     fullWidth value={postData.message}
                     onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
 
-
-                <TextField
-                    name="tags"
-                    variant="outlined"
-                    label="Tags (coma separated)"
-                    fullWidth value={postData.tags}
-                    onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(",") })} />
+                <div style={{ padding: '5px 0', width: '94%' }}>
+                    <ChipInput
+                        name="tags"
+                        variant="outlined"
+                        label="Tags"
+                        fullWidth
+                        value={postData.tags}
+                        onAdd={(chip) => handleAddChip(chip)}
+                        onDelete={(chip) => handleDeleteChip(chip)}
+                    />
+                </div>
 
                 <div className={classes.fileInput}>
                     <FileBase
@@ -100,3 +119,5 @@ const Form = ({ currentId, setCurrentId }) => {
 };
 
 export default Form;
+
+// done
