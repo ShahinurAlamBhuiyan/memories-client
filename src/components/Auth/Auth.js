@@ -24,6 +24,9 @@ const initialState = {
   password: '',
   confirmPassword: '',
 };
+
+
+
 const Auth = () => {
   const history = useHistory();
   const classes = useStyles();
@@ -44,7 +47,7 @@ const Auth = () => {
     }
   };
 
-  
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -61,7 +64,9 @@ const Auth = () => {
     const token = res?.tokenId;
     console.log(res);
     try {
-      dispatch({ type: AUTH, data: { result, token } });
+      
+      const data = await { result, token };
+      dispatch({ type: AUTH, data: data });
       history.push('/');
     } catch (error) {
       console.log(error);
@@ -69,7 +74,8 @@ const Auth = () => {
   };
 
 
-  const googleFailure = () => {
+  const googleFailure = (e) => {
+    e.preventDefault();
     alert('Google Sign In was unsuccessful. Try again later');
   };
 
