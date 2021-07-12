@@ -77,7 +77,10 @@ const Form = ({ currentId, setCurrentId }) => {
                     name="message"
                     variant="outlined"
                     label="Message"
-                    fullWidth value={postData.message}
+                    fullWidth
+                    multiline
+                    rows={4}
+                    value={postData.message}
                     onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
 
                 <div style={{ padding: '5px 0', width: '94%' }}>
@@ -98,26 +101,27 @@ const Form = ({ currentId, setCurrentId }) => {
                         multiple={false}
                         onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
 
-                    <Button
-                        className={classes.buttonSubmit}
-                        variant="contained" color="primary"
-                        size="large" fullWidth
-                        type="submit">
-                        Submit
-                    </Button>
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        size="small"
-                        fullWidth onClick={clear}>
-                        Clear
-                    </Button>
                 </div>
+                <Button
+                    className={classes.buttonSubmit}
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    fullWidth
+                    type="submit">
+                    Submit
+                </Button>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    size="small"
+                    fullWidth
+                    onClick={clear}>
+                    Clear
+                </Button>
             </form>
         </Paper>
     );
 };
 
 export default Form;
-
-// done

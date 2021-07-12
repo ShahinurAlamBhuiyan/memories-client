@@ -6,13 +6,7 @@ export default makeStyles((theme) => ({
     borderRadius: 15,
     margin: '30px 0',
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     padding: '10px 50px',
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-    },
   },
   heading: {
     color: theme.palette.primary.main,
@@ -20,31 +14,22 @@ export default makeStyles((theme) => ({
     fontSize: '2em',
     fontWeight: 300,
   },
+  image1: {
+    width: '100',
+  },
   image: {
     marginLeft: '10px',
     marginTop: '5px',
   },
   toolbar: {
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     width: '400px',
-    [theme.breakpoints.down('sm')]: {
-      width: 'auto',
-    },
   },
   profile: {
     display: 'flex',
     justifyContent: 'space-between',
     width: '400px',
-    alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
-      width: 'auto',
-      marginTop: 20,
-      justifyContent: 'center',
-    },
-  },
-  logout: {
-    marginLeft: '20px',
   },
   userName: {
     display: 'flex',
@@ -55,8 +40,42 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
+  grow: {
+    flexGrow: 1,
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+  },
+  [theme.breakpoints.down('sm')]: {
+    image1: {
+      width: '150px',
+      height: '30px',
+    },
+    heading: {
+      fontSize: '30px',
+      alignItems: 'center',
+    },
+    appBar: {
+      padding: '10px 10px',
+    },
+    purple: {
+      left: '30px',
+    },
+    logout: {
+      left: '5px',
+    },
   },
 }));
