@@ -1,0 +1,165 @@
+.type-wrapper{
+    width: 100%;
+    min-height: 550px;
+    background: rgba(236, 240, 241, 0.6);
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ------Thumbnail------- */
+.thumbnail {
+    width: 600px;
+    min-height: 370px;
+    background: #d8dddd;
+    border-radius: 7px;
+}
+.thumbnail-div{
+    position: relative;
+}
+.thumbnail-shimmer-wrapper{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 600px;
+    border-radius: 7px;
+    height: 370px;
+    overflow: hidden;
+}
+.thumbnail-shimmer{
+    width: 99%;
+    height: 370px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: loader 2s infinite;
+    box-shadow: 0 0 30px 30px rgba(255,255,255, .2);
+}
+
+
+/* --------Title---------- */
+.text-title {
+    width: 650px;
+    min-height: 40px;
+    margin-top: 10px;
+    background: #d8dddd;
+    border-radius: 7px;
+}
+.title-div{
+    position: relative;
+}
+.title-shimmer-wrapper{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 650px;
+    height: 40px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.title-shimmer{
+    width: 99%;
+    height: 40px;
+    background: rgba(255,255,255, .2);
+    animation: loader 2s infinite;
+    box-shadow: 0 0 30px 30px rgba(255,255,255, .2);
+}
+
+
+/* ---------Tag---------- */
+.text-tag {
+    width: 500px;
+    min-height: 20px;
+    margin-top: 10px;
+    background: #d8dddd;
+    border-radius: 5px;
+}
+.tag-div{
+    position: relative;
+}
+.tag-shimmer-wrapper{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 500px;
+    height: 20px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.tag-shimmer{
+    width: 99%;
+    height: 20px;
+    background: rgba(255,255,255, .2);
+    animation: loader 2s infinite;
+    box-shadow: 0 0 30px 30px rgba(255,255,255, .2);
+}
+
+
+/* -----Comment----- */
+.text-comment {
+    width: 600px;
+    min-height: 150px;
+    margin-top: 10px;
+    background: #d8dddd;
+    border-radius: 7px;
+}
+.comment-div{
+    position: relative;
+}
+.comment-shimmer-wrapper{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 600px;
+    height: 150px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.comment-shimmer{
+    width: 99%;
+    height: 150px;
+    background: rgba(255,255,255, .2);
+    animation: loader 2s infinite;
+    box-shadow: 0 0 30px 30px rgba(255,255,255, .2);
+}
+
+
+
+@keyframes loader {
+    0% {
+      transform: translateX(-120%);
+    }
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .thumbnail{
+        width: 370px;
+    }
+    .thumbnail-shimmer-wrapper{
+        width: 370px;
+    }
+    .text-title{
+        width: 370px;
+    }
+    .title-shimmer-wrapper{
+        width: 370px;
+    }
+
+    .text-tag{
+        width: 330px;
+    }
+    .tag-shimmer-wrapper{
+        width: 330px;
+    }
+
+    .text-comment{
+        width: 350px;
+    }
+    .comment-shimmer-wrapper{
+        width: 350px;
+    }
+}

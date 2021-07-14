@@ -1,17 +1,12 @@
 import React, { useEffect } from "react";
-import {
-  Paper,
-  Typography,
-  CircularProgress,
-  Divider,
-  Card,
-} from "@material-ui/core";
+import { Paper, Typography, Divider } from "@material-ui/core";
 import CommentSection from "./CommentSection";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import { useParams, useHistory } from "react-router-dom";
 import { getPost, getPostsBySearch } from "../../actions/posts";
 import useStyles from "./styles";
+import PostDetailsSkeleton from "../../Skeleton/PostDetailsSkeleton/PostDetailsSkeleton";
 
 const PostDetails = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
@@ -36,11 +31,9 @@ const PostDetails = () => {
 
   const openPost = (_id) => history.push(`/posts/${_id}`);
 
-  if (isLoading) {
+  if (!isLoading) {
     return (
-      <Paper elevation={6} className={classes.loadingPaper}>
-        <CircularProgress size="8em" />
-      </Paper>
+        <PostDetailsSkeleton />
     );
   }
 
