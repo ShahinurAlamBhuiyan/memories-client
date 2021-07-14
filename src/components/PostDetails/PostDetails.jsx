@@ -31,7 +31,7 @@ const PostDetails = () => {
 
   const openPost = (_id) => history.push(`/posts/${_id}`);
 
-  if (!isLoading) {
+  if (isLoading) {
     return (
         <PostDetailsSkeleton />
     );

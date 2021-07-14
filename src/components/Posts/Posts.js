@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, CircularProgress } from "@material-ui/core";
+import { Grid  } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import SinglePostSkeleton from '../../Skeleton/SinglePostSkeleton/SinglePostSkeleton';
 
