@@ -31,7 +31,7 @@ const PostDetails = () => {
   useEffect(() => {
     setTimeout(() => {
       setTimer(false);
-    }, 400000);
+    }, 4000);
   }, []);
 
   if (!post) return null;

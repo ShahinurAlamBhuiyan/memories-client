@@ -123,6 +123,8 @@
     box-shadow: 0 0 30px 30px rgba(255,255,255, .2);
 }
 
+
+
 @keyframes loader {
     0% {
       transform: translateX(-120%);
@@ -131,7 +133,6 @@
         transform: translateX(120%);
     }
 }
-
 
 @media only screen and (max-width: 1024px) {
     .thumbnail{
@@ -151,6 +152,7 @@
 @media only screen and (max-width: 600px) {
     .thumbnail{
         width: 370px;
+        margin-right: 0px;
     }
     .thumbnail-shimmer-wrapper{
         width: 370px;
@@ -181,6 +183,7 @@
 @media only screen and (max-width: 380px) {
     .thumbnail{
         width: 310px;
+        margin-right: 0px;
     }
     .thumbnail-shimmer-wrapper{
         width: 310px;
@@ -210,6 +213,7 @@
 @media only screen and (max-width: 330px) {
     .thumbnail{
         width: 275px;
+        margin-right: 0px;
     }
     .thumbnail-shimmer-wrapper{
         width: 275px;
