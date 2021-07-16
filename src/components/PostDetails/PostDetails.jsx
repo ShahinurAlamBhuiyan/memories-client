@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Paper, Typography, Divider } from "@material-ui/core";
 import CommentSection from "./CommentSection";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,7 @@ import useStyles from "./styles";
 import PostDetailsSkeleton from "../../Skeleton/PostDetailsSkeleton/PostDetailsSkeleton";
 
 const PostDetails = () => {
+  const [timer, setTimer] = useState(true);
   const { post, posts, isLoading } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -27,14 +28,19 @@ const PostDetails = () => {
     }
   }, [post]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setTimer(false);
+    }, 4000);
+  }, []);
+
   if (!post) return null;
+  
 
   const openPost = (_id) => history.push(`/posts/${_id}`);
 
-  if (isLoading) {
-    return (
-        <PostDetailsSkeleton />
-    );
+  if ((isLoading && timer) || (!isLoading && timer)) {
+    return <PostDetailsSkeleton />;
   }
 
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
