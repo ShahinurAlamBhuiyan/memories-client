@@ -31,7 +31,7 @@ const PostDetails = () => {
   useEffect(() => {
     setTimeout(() => {
       setTimer(false);
-    }, 4000);
+    }, 400000);
   }, []);
 
   if (!post) return null;
@@ -39,7 +39,7 @@ const PostDetails = () => {
 
   const openPost = (_id) => history.push(`/posts/${_id}`);
 
-  if ((isLoading && timer) || (!isLoading && timer)) {
+  if ((isLoading && timer) || (!isLoading === timer)) {
     return <PostDetailsSkeleton />;
   }
 

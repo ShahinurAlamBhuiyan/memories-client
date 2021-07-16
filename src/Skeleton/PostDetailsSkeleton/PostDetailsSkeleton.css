@@ -123,8 +123,6 @@
     box-shadow: 0 0 30px 30px rgba(255,255,255, .2);
 }
 
-
-
 @keyframes loader {
     0% {
       transform: translateX(-120%);
@@ -135,6 +133,21 @@
 }
 
 
+@media only screen and (max-width: 1024px) {
+    .thumbnail{
+        margin-right: 45px;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .thumbnail{
+        margin-right: 45px;
+    }
+    .thumbnail-shimmer-wrapper{
+        width: 370px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .thumbnail{
         width: 370px;
@@ -144,6 +157,7 @@
     }
     .text-title{
         width: 370px;
+        
     }
     .title-shimmer-wrapper{
         width: 370px;
@@ -161,5 +175,64 @@
     }
     .comment-shimmer-wrapper{
         width: 350px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .thumbnail{
+        width: 310px;
+    }
+    .thumbnail-shimmer-wrapper{
+        width: 310px;
+    }
+    .text-title{
+        width: 310px;
+        
+    }
+    .title-shimmer-wrapper{
+        width: 310px;
+    }
+
+    .text-tag{
+        width: 295px;
+    }
+    .tag-shimmer-wrapper{
+        width: 295px;
+    }
+
+    .text-comment{
+        width: 270px;
+    }
+    .comment-shimmer-wrapper{
+        width: 270px;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .thumbnail{
+        width: 275px;
+    }
+    .thumbnail-shimmer-wrapper{
+        width: 275px;
+    }
+    .text-title{
+        width: 275px;
+        
+    }
+    .title-shimmer-wrapper{
+        width: 275px;
+    }
+
+    .text-tag{
+        width: 265px;
+    }
+    .tag-shimmer-wrapper{
+        width: 265px;
+    }
+
+    .text-comment{
+        width: 245px;
+    }
+    .comment-shimmer-wrapper{
+        width: 245px;
     }
 }

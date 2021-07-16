@@ -1,84 +1,92 @@
-
 .skeleton-wrapper {
     width: 100%;
     position: relative;
-}
-.skeleton-wrapper .thumbnail {
+  }
+  .skeleton-wrapper .thumbnail {
     width: 100%;
     min-height: 120px;
-    background: #D2DBE2;
+    background: #d2dbe2;
     border-radius: 7px;
-}
-.skeleton-wrapper .text-lg {
+  }
+  .skeleton-wrapper .text-lg {
     width: 100%;
     margin-top: 10px;
-    background: #D2DBE2;
+    background: #d2dbe2;
     border-radius: 7px;
     min-height: 10px;
-}
-
-.skeleton-wrapper .text-md {
+  }
+  
+  .skeleton-wrapper .text-md {
     width: 75%;
     margin-top: 10px;
-    background: #D2DBE2;
+    background: #d2dbe2;
     border-radius: 7px;
     min-height: 10px;
-}
-.skeleton-wrapper .text-sm {
+  }
+  .skeleton-wrapper .text-sm {
     width: 30%;
     margin-top: 10px;
-    background: #D2DBE2;
+    background: #d2dbe2;
     border-radius: 7px;
     min-height: 10px;
-}
-.shimmer-wrapper {
+  }
+  .shimmer-wrapper {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-}
-.shimmer {
+  }
+  .shimmer {
     width: 50%;
     height: 100%;
-    background: rgba(255,255,255, .2);
+    background: rgba(255, 255, 255, 0.2);
     animation: loader 2s infinite;
-    box-shadow: 0 0 30px 30px rgba(255,255,255, .2);
-}
-@keyframes loader {
+    box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.2);
+  }
+  @keyframes loader {
     0% {
       transform: translateX(-150%);
     }
     50% {
-        transform: translateX(-50%);
+      transform: translateX(-50%);
     }
     100% {
-        transform: translateX(150%);
+      transform: translateX(150%);
     }
-}
-
-@media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 600px) {
     .skeleton-wrapper .thumbnail {
-      width: 350px;
-      min-height: 120px;
-      background: #d2dbe2;
-      border-radius: 7px;
+      width: 320px;
     }
     .shimmer-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 400px;
-      height: 100%;
-      overflow: hidden;
+      width: 320px;
     }
     .shimmer {
-      width: 400px;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      animation: loader 2s infinite;
-      box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.2);
+      width: 320px;
     }
     
+  }
+  @media only screen and (max-width: 380px) {
+    .skeleton-wrapper .thumbnail {
+      width: 280px;
+    }
+    .shimmer-wrapper {
+      width: 280px;
+    }
+    .shimmer {
+      width: 280px;
+    }
+  }
+  @media only screen and (max-width: 330px) {
+    .skeleton-wrapper .thumbnail {
+      width: 220px;
+    }
+    .shimmer-wrapper {
+      width: 220px;
+    }
+    .shimmer {
+      width: 220px;
+    }
   }
