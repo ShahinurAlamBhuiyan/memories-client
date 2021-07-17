@@ -18,6 +18,8 @@ const Posts = ({ setCurrentId }) => {
     }, 4000);
   }, []);
 
+  
+
   if (!posts.length && !isLoading) return 'No posts';
 
   return  ((isLoading && timer ) || ( !isLoading === timer)) ? 

@@ -144,9 +144,6 @@
     .thumbnail{
         margin-right: 45px;
     }
-    .thumbnail-shimmer-wrapper{
-        width: 370px;
-    }
 }
 
 @media only screen and (max-width: 600px) {
