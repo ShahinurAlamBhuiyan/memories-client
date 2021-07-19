@@ -21,7 +21,6 @@
 
 ## Technology:
 + Reactjs
-+ React-router-dom
 + React-redux
 + Redux-thunk
 + React-file-base64
