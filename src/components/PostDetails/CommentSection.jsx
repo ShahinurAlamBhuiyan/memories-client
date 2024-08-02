@@ -16,7 +16,7 @@ const CommentSection = ({ post }) => {
     setComments(newComments);
     setComment("");
 
-    commentsRef.current.scrollIntoView({ behavior: "smooth" });
+    commentsRef?.current.scrollIntoView({ behavior: "smooth" });
   };
   console.log(user);
   return (
