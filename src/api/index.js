@@ -1,9 +1,7 @@
 import axios from 'axios'
 
-// 'https://sh-memories-server.herokuapp.com'
-// http://localhost:5000
 
-const API = axios.create( { baseURL: 'http://localhost:5001'})
+const API = axios.create( { baseURL: 'https://memories-api-six.vercel.app'})
 
 // for middleware...
 API.interceptors.request.use((req) => {
